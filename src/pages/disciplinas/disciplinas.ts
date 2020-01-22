@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DisciplinaService } from '../../services/domain/disciplina.service';
 
 /**
  * Generated class for the DisciplinasPage page.
@@ -15,11 +16,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DisciplinasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public DisciplinaService:DisciplinaService){
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DisciplinasPage');
+    this.DisciplinaService.findAll()
+    .subscribe(response => {
+      console.log(response);
+    },
+    erro =>{
+      console.log(erro);
+    })
+   
+    
+    
   }
 
 }
