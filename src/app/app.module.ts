@@ -29,7 +29,8 @@ import { DisciplinaService } from '../services/domain/disciplina.service';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},DisciplinaService
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DisciplinaService
   ]
 })
 export class AppModule {}

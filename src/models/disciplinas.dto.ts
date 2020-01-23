@@ -1,4 +1,4 @@
 export interface DiscipliaDTO{
-    codigo:any;
+    codigo:String;
     nome:String;
 }
